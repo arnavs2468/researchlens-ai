@@ -1,0 +1,290 @@
+[
+  {
+    "id": "q01",
+    "question": "What is the primary architectural mechanism introduced in the Transformer model to replace recurrence?",
+    "category": "Methodology",
+    "target_document_ids": ["attention-is-all-you-need", "transformer"],
+    "relevant_keywords": ["self-attention", "multi-head attention", "recurrence", "convolution"],
+    "expected_answer_summary": "The Transformer relies entirely on self-attention mechanisms to compute representations of its input and output without using sequence-aligned RNNs or convolution.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q02",
+    "question": "What are the two pre-training objectives used in BERT?",
+    "category": "Methodology",
+    "target_document_ids": ["bert", "devlin2018bert"],
+    "relevant_keywords": ["masked language model", "mlm", "next sentence prediction", "nsp"],
+    "expected_answer_summary": "BERT uses Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q03",
+    "question": "What BLEU score did the Transformer (base model) achieve on the WMT 2014 English-to-German translation task?",
+    "category": "Dataset and metrics",
+    "target_document_ids": ["attention-is-all-you-need", "transformer"],
+    "relevant_keywords": ["27.3", "bleu", "wmt 2014", "english-to-german"],
+    "expected_answer_summary": "The Transformer base model achieved a BLEU score of 27.3 on WMT 2014 English-to-German.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q04",
+    "question": "On which datasets was BERT evaluated for general natural language understanding benchmarks?",
+    "category": "Dataset and metrics",
+    "target_document_ids": ["bert", "devlin2018bert"],
+    "relevant_keywords": ["glue", "squad", "multinli", "swag"],
+    "expected_answer_summary": "BERT was evaluated on the GLUE benchmark, SQuAD v1.1, SQuAD v2.0, and SWAG.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q05",
+    "question": "What is the dimensional size d_model of the Transformer base architecture?",
+    "category": "Factual lookup",
+    "target_document_ids": ["attention-is-all-you-need", "transformer"],
+    "relevant_keywords": ["512", "d_model", "dimension"],
+    "expected_answer_summary": "For the base model, d_model = 512.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q06",
+    "question": "How many attention heads (h) are utilized in each multi-head attention layer of the Transformer base model?",
+    "category": "Factual lookup",
+    "target_document_ids": ["attention-is-all-you-need", "transformer"],
+    "relevant_keywords": ["8", "heads", "h = 8", "multi-head"],
+    "expected_answer_summary": "The base model employs h = 8 parallel attention layers or heads.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q07",
+    "question": "How does LoRA (Low-Rank Adaptation) reduce the number of trainable parameters in large language models?",
+    "category": "Methodology",
+    "target_document_ids": ["lora", "hu2021lora"],
+    "relevant_keywords": ["low-rank", "decomposition matrices", "rank r", "weight updates", "delta w"],
+    "expected_answer_summary": "LoRA freezes pre-trained model weights and injects trainable rank decomposition matrices A and B into Transformer attention layers.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q08",
+    "question": "What is the rank parameter 'r' typically tested in LoRA experiments for GPT-3?",
+    "category": "Factual lookup",
+    "target_document_ids": ["lora", "hu2021lora"],
+    "relevant_keywords": ["rank 4", "rank 8", "r=4", "r=8", "r=1", "r=2"],
+    "expected_answer_summary": "LoRA authors found that ranks as small as r=4 or r=8 were sufficient to match or exceed full fine-tuning performance.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q09",
+    "question": "How do BERT and the original Transformer differ in their use of bidirectional versus autoregressive attention?",
+    "category": "Cross-paper comparison",
+    "target_document_ids": ["bert", "transformer", "attention-is-all-you-need"],
+    "relevant_keywords": ["bidirectional", "masked attention", "autoregressive", "decoder", "encoder"],
+    "expected_answer_summary": "The original Transformer decoder uses masked autoregressive attention to prevent attending to future tokens, while BERT's encoder uses unmasked bidirectional self-attention across all tokens.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q10",
+    "question": "What are the comparative parameter counts and fine-tuning storage requirements between full model fine-tuning and LoRA?",
+    "category": "Cross-paper comparison",
+    "target_document_ids": ["lora", "bert", "gpt3"],
+    "relevant_keywords": ["storage", "parameters", "10,000 times", "checkpoint size", "trainable"],
+    "expected_answer_summary": "LoRA can reduce trainable parameters by 10,000 times and GPU memory requirements up to 3-fold, eliminating the need to store full checkpoint copies.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q11",
+    "question": "What hardware temperature threshold causes quantum decoherence in the Transformer architecture?",
+    "category": "Insufficient evidence",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["quantum", "decoherence", "temperature"],
+    "expected_answer_summary": "Unanswerable: The Transformer is a classical deep learning neural network; quantum decoherence is unrelated and not discussed in the paper.",
+    "is_unanswerable": true
+  },
+  {
+    "id": "q12",
+    "question": "What clinical trial phase did BERT pass for FDA medical diagnostic approval?",
+    "category": "Insufficient evidence",
+    "target_document_ids": ["bert"],
+    "relevant_keywords": ["fda", "clinical trial", "phase 3"],
+    "expected_answer_summary": "Unanswerable: BERT is an NLP model, not a medical pharmaceutical or FDA approved diagnostic device.",
+    "is_unanswerable": true
+  },
+  {
+    "id": "q13",
+    "question": "What optimizer and learning rate schedule was used to train the original Transformer models?",
+    "category": "Methodology",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["adam", "warmup", "beta1 0.9", "beta2 0.98", "learning rate"],
+    "expected_answer_summary": "The Adam optimizer was used with beta1=0.9, beta2=0.98, and eps=10^-9, with a learning rate schedule that increases linearly for warmup_steps and decays proportionally to the inverse square root of step_num.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q14",
+    "question": "What maximum sequence length was used during pre-training for BERT-Base and BERT-Large?",
+    "category": "Factual lookup",
+    "target_document_ids": ["bert"],
+    "relevant_keywords": ["512", "sequence length", "128", "tokens"],
+    "expected_answer_summary": "BERT was pre-trained with sequence length 128 for 90% of steps, and sequence length 512 for the remaining 10% of steps.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q15",
+    "question": "What dropout rate was applied to the residual connections and sub-layers in the Transformer?",
+    "category": "Factual lookup",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["dropout", "0.1", "pdrop"],
+    "expected_answer_summary": "A dropout rate of P_drop = 0.1 was applied to the output of each sub-layer before adding to the sub-layer input and normalizing.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q16",
+    "question": "What masking strategy is used for Scaled Dot-Product Attention in the Transformer decoder?",
+    "category": "Methodology",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["masking", "illegal connections", "subsequent positions", "-infinity"],
+    "expected_answer_summary": "Masking sets values corresponding to subsequent positions to -infinity before the softmax step, ensuring predictions for position i only depend on known outputs at positions less than i.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q17",
+    "question": "What WordPiece vocabulary size was used in the tokenization scheme for BERT?",
+    "category": "Factual lookup",
+    "target_document_ids": ["bert"],
+    "relevant_keywords": ["30,000", "wordpiece", "vocabulary", "tokens"],
+    "expected_answer_summary": "BERT uses WordPiece embeddings with a 30,000 token vocabulary.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q18",
+    "question": "How is positional encoding calculated in the original Transformer paper?",
+    "category": "Methodology",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["sine", "cosine", "frequencies", "positional encoding", "wavelengths"],
+    "expected_answer_summary": "Positional encodings use sine and cosine functions of different frequencies, where each dimension corresponds to a sinusoid with geometric progression wavelengths from 2pi to 10000*2pi.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q19",
+    "question": "What was the exact F1 score achieved by BERT-Large on SQuAD v1.1 dev set?",
+    "category": "Dataset and metrics",
+    "target_document_ids": ["bert"],
+    "relevant_keywords": ["93.2", "squad v1.1", "f1 score"],
+    "expected_answer_summary": "BERT-Large achieved a 93.2 F1 score on the SQuAD v1.1 development set.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q20",
+    "question": "How does Retrieval-Augmented Generation (RAG) combine parametric and non-parametric memory?",
+    "category": "Methodology",
+    "target_document_ids": ["rag", "lewis2020rag"],
+    "relevant_keywords": ["parametric", "non-parametric", "dpr", "generator", "retriever"],
+    "expected_answer_summary": "RAG models combine a pre-trained sequence-to-sequence model as parametric memory with a dense vector index of Wikipedia passages via Dense Passage Retrieval (DPR) as non-parametric memory.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q21",
+    "question": "What is the difference between RAG-Sequence and RAG-Token formulation?",
+    "category": "Methodology",
+    "target_document_ids": ["rag", "lewis2020rag"],
+    "relevant_keywords": ["rag-sequence", "rag-token", "marginalize", "per-token", "per-sequence"],
+    "expected_answer_summary": "In RAG-Sequence, the model uses the same retrieved document to generate the complete sequence, while RAG-Token can draw on different documents for each individual generated token.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q22",
+    "question": "What accuracy did RAG achieve on the Natural Questions open-domain benchmark?",
+    "category": "Dataset and metrics",
+    "target_document_ids": ["rag", "lewis2020rag"],
+    "relevant_keywords": ["natural questions", "exact match", "44.5", "open-domain qa"],
+    "expected_answer_summary": "RAG-Sequence achieved 44.5% Exact Match (EM) on the Natural Questions test set.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q23",
+    "question": "Compare the computational complexity per layer of self-attention versus recurrent layers as sequence length n grows.",
+    "category": "Cross-paper comparison",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["o(n^2 * d)", "o(n * d^2)", "complexity", "sequential operations", "o(1)"],
+    "expected_answer_summary": "Self-attention has per-layer complexity O(n^2 * d) with O(1) sequential operations, whereas recurrent layers have complexity O(n * d^2) with O(n) sequential operations.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q24",
+    "question": "What internal battery chemistry is recommended by the authors of LoRA for deploying mobile LLMs?",
+    "category": "Insufficient evidence",
+    "target_document_ids": ["lora"],
+    "relevant_keywords": ["battery", "chemistry", "lithium"],
+    "expected_answer_summary": "Unanswerable: The paper discusses parameter-efficient fine-tuning algorithms and makes no mention of battery chemistry.",
+    "is_unanswerable": true
+  },
+  {
+    "id": "q25",
+    "question": "What legal jurisdiction governs the copyright assignment of generated tokens in the RAG model?",
+    "category": "Insufficient evidence",
+    "target_document_ids": ["rag"],
+    "relevant_keywords": ["copyright", "jurisdiction", "legal"],
+    "expected_answer_summary": "Unanswerable: Legal jurisdictions and token copyrights are outside the scope of the research paper.",
+    "is_unanswerable": true
+  },
+  {
+    "id": "q26",
+    "question": "Compare the training data sources between BERT and the original Transformer translation model.",
+    "category": "Cross-paper comparison",
+    "target_document_ids": ["bert", "transformer", "attention-is-all-you-need"],
+    "relevant_keywords": ["booksdataset", "english wikipedia", "wmt 2014", "parallel sentences"],
+    "expected_answer_summary": "The Transformer was trained on bilingual parallel corpora (WMT 2014 English-German and English-French), while BERT was pre-trained on BooksCorpus (800M words) and English Wikipedia (2,500M words).",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q27",
+    "question": "What scaling factor is used in the dot-product attention calculation in the Transformer?",
+    "category": "Factual lookup",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["sqrt(d_k)", "square root", "scaling factor", "1/sqrt(d_k)"],
+    "expected_answer_summary": "The dot product is divided by the square root of the key dimension: 1 / sqrt(d_k).",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q28",
+    "question": "What percentage of selected masked tokens are kept unchanged during BERT's pre-training?",
+    "category": "Factual lookup",
+    "target_document_ids": ["bert"],
+    "relevant_keywords": ["10%", "unchanged", "80% [MASK]", "10% random"],
+    "expected_answer_summary": "Of the 15% masked token positions, 80% are replaced with [MASK], 10% are replaced with a random token, and 10% are kept unchanged.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q29",
+    "question": "What benchmark datasets were used to evaluate LoRA on natural language generation and understanding?",
+    "category": "Dataset and metrics",
+    "target_document_ids": ["lora"],
+    "relevant_keywords": ["glue", "e2e nlg", "webnlg", "dart"],
+    "expected_answer_summary": "LoRA was evaluated on RoBERTa/DeBERTa with GLUE benchmark, and GPT-2 on E2E NLG Challenge, WebNLG, and DART.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q30",
+    "question": "How does hybrid retrieval (BM25 + Dense) address vocabulary mismatch compared to pure dense retrieval?",
+    "category": "Cross-paper comparison",
+    "target_document_ids": ["rag", "retrieval"],
+    "relevant_keywords": ["vocabulary mismatch", "exact keywords", "out of vocabulary", "rare entities", "hybrid", "bm25"],
+    "expected_answer_summary": "Dense retrieval excels at semantic similarity but can struggle with rare entities, serial numbers, and exact acronyms; BM25 provides strong exact keyword matching, mitigating vocabulary mismatch when fused via RRF.",
+    "is_unanswerable": false
+  },
+  {
+    "id": "q31",
+    "question": "What cryptographic hashing algorithm is used inside the multi-head attention weight matrix?",
+    "category": "Insufficient evidence",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["cryptographic", "sha-256", "hash function"],
+    "expected_answer_summary": "Unanswerable: The Transformer uses linear projections and softmax, not cryptographic hashing functions.",
+    "is_unanswerable": true
+  },
+  {
+    "id": "q32",
+    "question": "What was the total training time for the Transformer big model on 8 NVIDIA P100 GPUs?",
+    "category": "Dataset and metrics",
+    "target_document_ids": ["attention-is-all-you-need"],
+    "relevant_keywords": ["3.5 days", "300,000 steps", "p100", "8 gpus"],
+    "expected_answer_summary": "The big model was trained for 300,000 steps which took 3.5 days on 8 P100 GPUs.",
+    "is_unanswerable": false
+  }
+]
